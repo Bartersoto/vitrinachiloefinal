@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Registro</title>
+  <title>Registro - VitrinaChiloe</title>
 </head>
 <body>
   <h2>Registrarse en VitrinaChiloe</h2>
@@ -12,12 +12,15 @@
     <input type="text" id="nombre" placeholder="Nombre completo" required />
     <input type="email" id="email" placeholder="Correo electrónico" required />
     <input type="password" id="password" placeholder="Contraseña" required />
+    <input type="text" id="rubro" placeholder="Rubro o especialidad" required />
+    <textarea id="descripcion" placeholder="Descripción del servicio" required></textarea>
+    <input type="text" id="ubicacion" placeholder="Ubicación (Ej: Castro)" required />
     <button type="submit">Registrarse</button>
   </form>
 
   <p id="mensaje"></p>
 
-  <!-- Cargar script como módulo -->
+  <!-- Script con Firebase y lógica de registro -->
   <script type="module" src="./registro.js"></script>
 </body>
 </html>
