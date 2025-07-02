@@ -14,9 +14,11 @@ document.getElementById('form-registro').addEventListener('submit', async (e) =>
   const ubicacion = document.getElementById('ubicacion').value;
 
   try {
+    // Crear el usuario con correo y contraseña
     const credencial = await createUserWithEmailAndPassword(auth, email, password);
     const uid = credencial.user.uid;
 
+    // Guardar datos adicionales en Firestore
     await setDoc(doc(db, 'fichas', uid), {
       nombre,
       rubro,
@@ -24,9 +26,10 @@ document.getElementById('form-registro').addEventListener('submit', async (e) =>
       ubicacion
     });
 
-    alert('Ficha creada con éxito');
+    alert('Ficha creada con éxito ✅');
+    document.getElementById('form-registro').reset(); // limpiar formulario
   } catch (error) {
-    console.error(error);
-    alert('Error al registrar: ' + error.message);
+    console.error('Error al registrar:', error);
+    alert('Error: ' + error.message);
   }
 });
