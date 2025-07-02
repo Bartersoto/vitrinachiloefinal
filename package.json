@@ -1,0 +1,23 @@
+{
+  "name": "vitrinachiloefinal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bartersoto/vitrinachiloefinal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bartersoto/vitrinachiloefinal/issues"
+  },
+  "homepage": "https://github.com/Bartersoto/vitrinachiloefinal#readme",
+  "description": "",
+  "dependencies": {
+    "firebase": "^11.10.0"
+  }
+}
