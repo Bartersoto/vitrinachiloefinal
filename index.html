@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Vitrina Chiloe</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VitrinaChiloe - Profesionales</title>
 </head>
 <body>
-  <h1>¡Hola, Chilote!</h1>
-  <p>Este es el primer commit hecho correctamente por Bartersoto.</p>
+  <h1>VitrinaChiloe</h1>
+  <div id="contenedor-fichas"></div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyD_9f_ftz-Hqy0GQ3O-_14YBLrEae5qNmU",
+      authDomain: "vitrinachiloe-dd4da.firebaseapp.com",
+      projectId: "vitrinachiloe-dd4da",
+      storageBucket: "vitrinachiloe-dd4da.appspot.com",
+      messagingSenderId: "242783206807",
+      appId: "1:242783206807:web:6fe1574ebb77825fc3d8d2"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const contenedor = document.getElementById("contenedor-fichas");
+
+    async function mostrarFichas() {
+      const querySnapshot = await getDocs(collection(db, "profesionales"));
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const ficha = document.createElement("div");
+        ficha.innerHTML = `
+          <h3>${data.nombre}</h3>
+          <p><strong>Rubro:</strong> ${data.rubro}</p>
+          <p><strong>Descripción:</strong> ${data.descripcion}</p>
+          <p><strong>Ubicación:</strong> ${data.ubicacion}</p>
+          <hr>
+        `;
+        contenedor.appendChild(ficha);
+      });
+    }
+
+    mostrarFichas();
+  </script>
 </body>
 </html>
