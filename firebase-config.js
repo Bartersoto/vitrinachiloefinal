@@ -4,7 +4,7 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-aut
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD_9f_ftz-Hqv0G3Q--14YBLfEae5qMnwU",
+  apiKey: "AIzaSyD_9f_ftz-Hqv0GG3Q--14YBLfEae5qNmU",
   authDomain: "vitrinachiloe-dd4da.firebaseapp.com",
   projectId: "vitrinachiloe-dd4da",
   storageBucket: "vitrinachiloe-dd4da.appspot.com",
@@ -13,6 +13,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+export { auth, db };
