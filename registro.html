@@ -1,26 +1,24 @@
+<!-- registro.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro - VitrinaChiloe</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Registrarse en VitrinaChiloe</h2>
-
-  <form id="registro-form">
-    <input type="text" id="nombre" placeholder="Nombre completo" required />
-    <input type="email" id="email" placeholder="Correo electrónico" required />
-    <input type="password" id="password" placeholder="Contraseña" required />
-    <input type="text" id="rubro" placeholder="Rubro o especialidad" required />
-    <textarea id="descripcion" placeholder="Descripción del servicio" required></textarea>
-    <input type="text" id="ubicacion" placeholder="Ubicación (Ej: Castro)" required />
-    <button type="submit">Registrarse</button>
+  <h1>Crear cuenta y ficha profesional</h1>
+  <form id="form-registro">
+    <input type="email" id="email" placeholder="Correo" required><br>
+    <input type="password" id="password" placeholder="Contraseña" required><br>
+    <input type="text" id="nombre" placeholder="Nombre completo" required><br>
+    <input type="text" id="rubro" placeholder="Rubro (Ej: Carpintero)" required><br>
+    <textarea id="descripcion" placeholder="Descripción del servicio" required></textarea><br>
+    <input type="text" id="ubicacion" placeholder="Ubicación (Ej: Castro)" required><br>
+    <button type="submit">Registrar</button>
   </form>
 
-  <p id="mensaje"></p>
-
-  <!-- Script con Firebase y lógica de registro -->
-  <script type="module" src="./registro.js"></script>
+  <script type="module" src="registro.js"></script>
 </body>
 </html>
