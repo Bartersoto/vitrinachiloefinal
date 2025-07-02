@@ -14,20 +14,21 @@ document.getElementById('form-registro').addEventListener('submit', async (e) =>
   const ubicacion = document.getElementById('ubicacion').value;
 
   try {
-    // Crear el usuario con correo y contraseña
+    // Crear el usuario en Authentication
     const credencial = await createUserWithEmailAndPassword(auth, email, password);
     const uid = credencial.user.uid;
 
-    // Guardar datos adicionales en Firestore
+    // Guardar ficha en Firestore
     await setDoc(doc(db, 'fichas', uid), {
       nombre,
       rubro,
       descripcion,
-      ubicacion
+      ubicacion,
+      email
     });
 
     alert('Ficha creada con éxito ✅');
-    document.getElementById('form-registro').reset(); // limpiar formulario
+    document.getElementById('form-registro').reset();
   } catch (error) {
     console.error('Error al registrar:', error);
     alert('Error: ' + error.message);
