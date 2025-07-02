@@ -1,7 +1,7 @@
 // registro.js
 import { auth, db } from './firebase-config.js';
 import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
-import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-lite.js';
+import { doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
 document.getElementById('form-registro').addEventListener('submit', async (e) => {
   e.preventDefault();
