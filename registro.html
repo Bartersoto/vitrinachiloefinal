@@ -1,20 +1,23 @@
-<!-- registro.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Registro | VitrinaChiloe</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro</title>
 </head>
 <body>
   <h2>Registrarse en VitrinaChiloe</h2>
-  <form id="registroForm">
+
+  <form id="registro-form">
     <input type="text" id="nombre" placeholder="Nombre completo" required />
     <input type="email" id="email" placeholder="Correo electrónico" required />
     <input type="password" id="password" placeholder="Contraseña" required />
     <button type="submit">Registrarse</button>
   </form>
 
-  <script type="module" src="registro.js"></script>
+  <p id="mensaje"></p>
+
+  <!-- Cargar script como módulo -->
+  <script type="module" src="./registro.js"></script>
 </body>
 </html>
